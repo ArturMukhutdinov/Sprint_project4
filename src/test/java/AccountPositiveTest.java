@@ -4,12 +4,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class AccountTest extends TestCase {
+public class AccountPositiveTest extends TestCase {
 
     private final String name;
 
 
-    public AccountTest(String name) {
+    public AccountPositiveTest(String name) {
         this.name = name;
 
     }
@@ -21,14 +21,8 @@ public class AccountTest extends TestCase {
                 {"Дж а"},
                 {"Дж ар"},
                 {"Джаред Летоооооооо"},
-                {"Джаред Летоооооооощ"},
-                {"Джаред Летоооооооощз"},
-                {""},
-                {" ДжаредЛето"},
-                {"ДжаредЛето"},
-                {"Джаред Лето "},
-                {"Джаред  Лето"},
-                {"Дж"}
+                {"Джаред Летоооооооощ"}
+
 };
     }
 
@@ -37,5 +31,6 @@ public class AccountTest extends TestCase {
         Account account = new Account(name);
         boolean actual = account.checkNameToEmboss(account);
         assertTrue(actual);
+
     }
 }
