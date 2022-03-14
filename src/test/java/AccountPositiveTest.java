@@ -1,3 +1,4 @@
+import io.qameta.allure.junit4.DisplayName;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,14 +9,13 @@ public class AccountPositiveTest extends TestCase {
 
     private final String name;
 
-
     public AccountPositiveTest(String name) {
         this.name = name;
 
     }
 
     @Parameterized.Parameters
-    public static Object[][] getTestData(){
+    public static Object[][] getTestData() {
         return new Object[][]{
                 {"Джаред Лето"},
                 {"Дж а"},
@@ -23,10 +23,11 @@ public class AccountPositiveTest extends TestCase {
                 {"Джаред Летоооооооо"},
                 {"Джаред Летоооооооощ"}
 
-};
+        };
     }
 
     @Test
+    @DisplayName("Проверка эмбоссирования, позитивные тесты")
     public void validName() {
         Account account = new Account(name);
         boolean actual = account.checkNameToEmboss(account);
